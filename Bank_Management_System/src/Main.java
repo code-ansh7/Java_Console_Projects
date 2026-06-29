@@ -20,7 +20,7 @@ public class Main {
                 System.out.println("=========== CREATE ACCOUNT ===========");
                 System.out.println();
                 Validation valid = new Validation();
-
+                FileManager fm = new FileManager();
                 //Inputs + Validations
                 String name;
                 while (true) {
@@ -30,21 +30,21 @@ public class Main {
                         break; // Name valid hai, loop se bahar niklo
                     }
                 }
- 
+
                 long accNumber;
-                while (true) { 
+                while (true) {
                     System.out.print("Enter Account Number : ");
                     accNumber = sc.nextLong();
-                     if(valid.checkAccountNumber(accNumber)){
+                    if (valid.checkAccountNumber(accNumber)) {
                         break;
                     }
                 }
-                 
+
                 int pin;
-                while (true) { 
+                while (true) {
                     System.out.print("Enter Your PIN : ");
                     pin = sc.nextInt();
-                    if(valid.checkPin(pin)){
+                    if (valid.checkPin(pin)) {
                         break;
                     }
                 }
@@ -52,7 +52,7 @@ public class Main {
                 int balance;
                 while (true) {
                     System.out.print("Enter Initial Balance : ");
-                    balance = sc.nextInt();                   
+                    balance = sc.nextInt();
                     if (valid.checkBalance(balance)) {
                         break;// Balance valid hai, loop se bahar niklo
                     }
@@ -60,9 +60,16 @@ public class Main {
 
                 BankAccount acc = new BankAccount();
 
-                     acc.createAccount(name, accNumber, pin, balance);
-                     acc.displayAccount();
-                break;
+                acc.createAccount(name, accNumber, pin, balance);
+                if(fm.saveAccount(name, accNumber, pin, balance)){
+                    acc.displayAccount();
+                    System.out.println("\nAccount Saved Successfully...");
+                }
+                else {
+                    System.out.println("\nAccount Not Saved, Please try again!");
+                }
+         
+                break;//case 1 break
 
             case 2:
                 System.out.println("Login Selected.");
