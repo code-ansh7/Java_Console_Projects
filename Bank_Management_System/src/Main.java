@@ -21,26 +21,38 @@ public class Main {
                 System.out.println();
                 Validation valid = new Validation();
 
-                // Name Input + Validation
+                //Inputs + Validations
                 String name;
                 while (true) {
                     System.out.print("Enter Account Holder Name : ");
                     name = sc.nextLine();
-
                     if (valid.checkName(name)) {
                         break; // Name valid hai, loop se bahar niklo
                     }
                 }
-
-                System.out.print("Enter Account Number : ");
-                long accNumber = sc.nextLong();
-                System.out.print("Enter Your PIN : ");
-                int pin = sc.nextInt();
+ 
+                long accNumber;
+                while (true) { 
+                    System.out.print("Enter Account Number : ");
+                    accNumber = sc.nextLong();
+                     if(valid.checkAccountNumber(accNumber)){
+                        break;
+                    }
+                }
+                 
+                int pin;
+                while (true) { 
+                    System.out.print("Enter Your PIN : ");
+                    pin = sc.nextInt();
+                    if(valid.checkPin(pin)){
+                        break;
+                    }
+                }
 
                 int balance;
                 while (true) {
                     System.out.print("Enter Initial Balance : ");
-                    balance = sc.nextInt();
+                    balance = sc.nextInt();                   
                     if (valid.checkBalance(balance)) {
                         break;// Balance valid hai, loop se bahar niklo
                     }
