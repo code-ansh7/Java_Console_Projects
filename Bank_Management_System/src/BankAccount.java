@@ -12,9 +12,9 @@ public class BankAccount {
         System.out.println("Account Created Sucessfully...\n");
     }
     void displayAccount(){
-        System.err.println("============ Account Details ============\n");
+        System.out.println("============ Account Details ============\n");
         System.out.println("Account Holder : " + name);
-        System.err.println("Account Number : " + accNumber);
-        System.err.println("Account Balance : " + balance);
+        System.out.println("Account Number : " + accNumber);
+        System.out.println("Account Balance : " + balance);
     }
 }
