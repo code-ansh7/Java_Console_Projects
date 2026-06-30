@@ -16,7 +16,7 @@ public class Main {
         sc.nextLine();
 
         switch (choice) {
-            case 1:
+            case 1:{
                 System.out.println("=========== CREATE ACCOUNT ===========");
                 System.out.println();
                 Validation valid = new Validation();
@@ -70,10 +70,37 @@ public class Main {
                 }
          
                 break;//case 1 break
+            }
+            case 2:{
+                System.out.println("=========== LOGIN ACCOUNT ===========\n");
+                Validation valid = new Validation();
+                FileManager fm = new FileManager();
+                long accNumber;
+                while (true) {
+                    System.out.print("Enter Account Number : ");
+                    accNumber = sc.nextLong();
+                    if (valid.checkAccountNumber(accNumber)) {
+                        break;
+                    }
+                }
 
-            case 2:
-                System.out.println("Login Selected.");
+                int pin;
+                while (true) {
+                    System.out.print("Enter Your PIN : ");
+                    pin = sc.nextInt();
+                    if (valid.checkPin(pin)) {
+                        break;
+                    }
+                }
+
+                if(fm.loginAccount(accNumber, pin)){
+                    System.out.println("Login Successfull...");
+                }
+                else{
+                    System.out.println("User not found!");
+                }
                 break;
+            }
             case 3:
                 System.out.println("Thank You For Using My Bank Management System.");
                 break;
