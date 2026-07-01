@@ -16,7 +16,7 @@ public class Main {
         sc.nextLine();
 
         switch (choice) {
-            case 1:{
+            case 1: {
                 System.out.println("=========== CREATE ACCOUNT ===========");
                 System.out.println();
                 Validation valid = new Validation();
@@ -61,17 +61,16 @@ public class Main {
                 BankAccount acc = new BankAccount();
 
                 acc.createAccount(name, accNumber, pin, balance);
-                if(fm.saveAccount(name, accNumber, pin, balance)){
+                if (fm.saveAccount(name, accNumber, pin, balance)) {
                     acc.displayAccount();
                     System.out.println("\nAccount Saved Successfully...");
-                }
-                else {
+                } else {
                     System.out.println("\nAccount Not Saved, Please try again!");
                 }
-         
+
                 break;//case 1 break
             }
-            case 2:{
+            case 2: {
                 System.out.println("=========== LOGIN ACCOUNT ===========\n");
                 Validation valid = new Validation();
                 FileManager fm = new FileManager();
@@ -93,14 +92,28 @@ public class Main {
                     }
                 }
 
-                if(fm.loginAccount(accNumber, pin)){
+                if (fm.loginAccount(accNumber, pin)) {
                     Dashboard db = new Dashboard();
-                    db.showDashboard();
-                    int c = db.dashboardChoice(sc);
-                    System.out.println("Choice : " + c);
-                }
-                else{
-                    System.out.println("User not found!");
+                    boolean isLoggedin = true;
+                    while (isLoggedin) {
+                        db.showDashboard();
+                        int dashboardChoice = db.dashboardChoice(sc);
+                        switch(dashboardChoice){
+                            case 1: System.out.println("Deposit Coming Soon...");
+                                    break;
+                            case 2: System.out.println("Withdraw Coming Soon...");
+                                    break;
+                            case 3: System.out.println("Check Balance Coming Soon...");
+                                    break;
+                            case 4: System.out.println("Logout Successfull...");
+                                    isLoggedin = false;
+                                    break;
+                            default: System.out.println("Invalid Choice!");
+                        }
+
+                    }
+                }else {
+                        System.out.println("User not found!");
                 }
                 break;
             }
