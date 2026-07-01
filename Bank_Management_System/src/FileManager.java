@@ -23,33 +23,46 @@ public class FileManager {
         }
     }
 
-    boolean loginAccount(long accNumber, int pin) {
+    BankAccount loginAccount(long accNumber, int pin) {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("../database/accounts.txt"));
+            BufferedReader br = new BufferedReader(new FileReader     ("../database/accounts.txt"));
+             String name = "";
+            int balance = 0;
+
             String line;
             while ((line = br.readLine()) != null) {
-                // Account Number wali line mili?
+
+                if (line.startsWith("Name")) {
+                    name = line.substring(line.indexOf(":") + 2);
+                }
                 if (line.startsWith("Account Number")) {
-                    // User ka account number match hua?
                     if (line.contains(String.valueOf(accNumber))) {
-                        // Agli line read karo
-                        line = br.readLine();
-                        // PIN match hua?
+                        line = br.readLine(); // PIN line
                         if (line.contains(String.valueOf(pin))) {
+                            line = br.readLine(); // Balance line
+                            balance = Integer.parseInt(//to convert string to int 
+                                    line.substring(line.indexOf(":") + 2));
                             br.close();
-                            return true;
-                        } else {
-                            br.close();
-                            return false;
+                            return new BankAccount(
+                                    name,
+                                    accNumber,
+                                    pin,
+                                    balance);
+
                         }
                     }
                 }
             }
+
             br.close();
+
         } catch (Exception e) {
+
             System.out.println(e);
+
         }
 
-        return false;
+        return null;
+
     }
 }

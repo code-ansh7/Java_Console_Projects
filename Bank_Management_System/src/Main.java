@@ -92,28 +92,33 @@ public class Main {
                     }
                 }
 
-                if (fm.loginAccount(accNumber, pin)) {
+                BankAccount currentUser = fm.loginAccount(accNumber, pin);// sb cheeze Current user mai daal do 
+                if (currentUser != null) {//agr null nhi hai mtlb user found.
                     Dashboard db = new Dashboard();
-                    boolean isLoggedin = true;
-                    while (isLoggedin) {
-                        db.showDashboard();
+                    boolean isLoggedIn = true;
+                    while (isLoggedIn) {
+                        db.showDashboard(currentUser);
                         int dashboardChoice = db.dashboardChoice(sc);
-                        switch(dashboardChoice){
-                            case 1: System.out.println("Deposit Coming Soon...");
-                                    break;
-                            case 2: System.out.println("Withdraw Coming Soon...");
-                                    break;
-                            case 3: System.out.println("Check Balance Coming Soon...");
-                                    break;
-                            case 4: System.out.println("Logout Successfull...");
-                                    isLoggedin = false;
-                                    break;
-                            default: System.out.println("Invalid Choice!");
+                        switch (dashboardChoice) {
+                            case 1:
+                                System.out.println("Deposit Coming Soon...");
+                                break;
+                            case 2:
+                                System.out.println("Withdraw Coming Soon...");
+                                break;
+                            case 3:
+                                System.out.println("Check Balance Coming Soon...");
+                                break;
+                            case 4:
+                                System.out.println("Logout Successful...");
+                                isLoggedIn = false;
+                                break;
+                            default:
+                                System.out.println("Invalid Choice!");
                         }
-
                     }
-                }else {
-                        System.out.println("User not found!");
+                } else {
+                    System.out.println("User not found!");
                 }
                 break;
             }

@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 public class Dashboard {
-    void showDashboard(){
+    void showDashboard(BankAccount currentUser){
         System.out.println("=====================================");
-        System.out.println("           Bank Dashboard          ");
+        System.out.println("Welcome, "+currentUser.name+"             ");
         System.out.println("=====================================\n");
         System.out.println("1.Deposit Money.\n2.Withdraw Money.\n3.Check Balance.\n4.Logout.\n");
     }

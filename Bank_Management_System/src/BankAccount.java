@@ -3,6 +3,18 @@ public class BankAccount {
     long accNumber;
     int pin;
     int balance;
+    // Default Constructor
+    BankAccount() {
+
+    }
+    // Parameterized Constructor
+    BankAccount(String name, long accNumber, int pin, int balance) {
+        this.name = name;
+        this.accNumber = accNumber;
+        this.pin = pin;
+        this.balance = balance;
+    }
+
     void createAccount(String name, long accNumber, int pin, int balance){
         this.name = name;
         this.accNumber = accNumber;
