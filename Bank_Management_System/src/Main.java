@@ -5,9 +5,9 @@ public class Main {
 
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("===================================");
-        System.out.println("   BANK MANAGEMENT SYSTEM v1.0     ");
-        System.out.println("===================================");
+        System.out.println("=====================================");
+        System.out.println("    BANK MANAGEMENT SYSTEM v1.0      ");
+        System.out.println("=====================================");
         System.out.println();
         System.out.print("1.Create Account.\n2.Login.\n3.Exit.");
         System.out.println();
@@ -94,7 +94,10 @@ public class Main {
                 }
 
                 if(fm.loginAccount(accNumber, pin)){
-                    System.out.println("Login Successfull...");
+                    Dashboard db = new Dashboard();
+                    db.showDashboard();
+                    int c = db.dashboardChoice(sc);
+                    System.out.println("Choice : " + c);
                 }
                 else{
                     System.out.println("User not found!");
