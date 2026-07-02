@@ -1,317 +1,261 @@
-# 🏦 Bank Management System v1.0
+# 🏦 Bank Management System
 
-A console-based **Bank Management System** developed using **Core Java**.
+![Java](https://img.shields.io/badge/Java-17+-orange?style=for-the-badge&logo=openjdk)
+![OOP](https://img.shields.io/badge/OOP-Core%20Java-blue?style=for-the-badge)
+![File Handling](https://img.shields.io/badge/File%20Handling-CSV-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-This project is built as part of my Java learning journey to understand how real software is designed using **Object-Oriented Programming, File Handling, Validation, and Modular Architecture**.
+A **Console-Based Bank Management System** developed using **Core Java** to demonstrate Object-Oriented Programming (OOP), File Handling, Authentication, Validation, and Modular Software Design.
 
----
-
-# 🚀 Features
-
-## ✅ Account Management
-
-- Create New Bank Account
-- Display Account Details
-- Permanent Account Storage
-- Multiple Account Support
+This project stores account information using **CSV-based file storage** instead of a database and simulates basic banking operations through a console interface.
 
 ---
 
-## ✅ Input Validation
+# ✨ Features
 
-- Account Holder Name Validation
-- 10-Digit Account Number Validation
-- 4-Digit PIN Validation
-- Initial Balance Validation
-
----
-
-## ✅ File Handling
-
-- BufferedWriter
-- FileWriter
-- Append Mode Storage
-- Permanent Data Storage
-- Boolean-based Save Operation
+- ✅ Create Account
+- ✅ Login Authentication
+- ✅ Deposit Money
+- ✅ Withdraw Money
+- ✅ Check Balance
+- ✅ View Account Details
+- ✅ Logout
+- ✅ Input Validation
+- ✅ CSV File Storage
+- ✅ Persistent Data
+- ✅ Modular Code Structure
+- ✅ Object-Oriented Programming
 
 ---
 
-# 🛠 Technologies Used
+# 🛠 Tech Stack
 
-- Core Java
-- OOP
-- File Handling
-- BufferedWriter
-- Exception Handling
-- VS Code
-- Git & GitHub
+| Technology | Purpose |
+|------------|---------|
+| Java | Programming Language |
+| OOP | Software Design |
+| BufferedReader | Read Data |
+| BufferedWriter | Write Data |
+| File Handling | Persistent Storage |
+| VS Code | Development Environment |
+| Git & GitHub | Version Control |
 
 ---
 
-# 🏗 System Architecture
+# 📂 Project Structure
 
-```text
-                         +------------------+
-                         |      USER        |
-                         +--------+---------+
-                                  |
-                                  v
-                         +------------------+
-                         |    Main.java     |
-                         |  (Controller)    |
-                         +--------+---------+
-                                  |
-          +-----------------------+-----------------------+
-          |                       |                       |
-          v                       v                       v
-+------------------+    +------------------+    +------------------+
-|  Validation.java |    | BankAccount.java |    | FileManager.java |
-|------------------|    |------------------|    |------------------|
-| Validate Name    |    | Create Account   |    | Save Account     |
-| Validate PIN     |    | Store Details    |    | Write File       |
-| Validate Balance |    | Display Details  |    | Append Mode      |
-+------------------+    +------------------+    +--------+---------+
-                                                          |
-                                                          v
-                                          +---------------------------+
-                                          | database/accounts.txt     |
-                                          | Permanent Account Storage |
-                                          +---------------------------+
 ```
-
----
-
-# 📂 Folder Structure
-
-```text
-Bank_Management_System
+Bank-Management-System/
 │
-├── src
-│   │
+├── src/
 │   ├── Main.java
 │   ├── BankAccount.java
-│   ├── Validation.java
-│   └── FileManager.java
+│   ├── Dashboard.java
+│   ├── FileManager.java
+│   ├── TransactionManager.java
+│   └── Validation.java
 │
-├── database
+├── database/
 │   └── accounts.txt
 │
-├── docs
+├── docs/
+│   ├── planning.md
+│   ├── flowchart.md
+│   └── notes.md
 │
-├── screenshots
+├── LICENSE
 │
 └── README.md
 ```
 
 ---
 
-# ⚙ Current Workflow
+# 🏗 Project Architecture
 
-```text
-Start Program
-
-↓
-
-Show Main Menu
-
-↓
-
-User Selects Create Account
-
-↓
-
-Take Input
-
-↓
-
-Validate Name
-
-↓
-
-Validate Account Number
-
-↓
-
-Validate PIN
-
-↓
-
-Validate Balance
-
-↓
-
-Create Account Object
-
-↓
-
-Save Account into File
-
-↓
-
-Display Success
-
-↓
-
-End
+```
+                        User
+                          │
+                          ▼
+                   +--------------+
+                   |  Main.java   |
+                   +------+-------+
+                          │
+      +-------------------+-------------------+
+      │                   │                   │
+      ▼                   ▼                   ▼
+ Validation         Dashboard        TransactionManager
+                                              │
+                                              ▼
+                                      FileManager
+                                              │
+                                              ▼
+                                       accounts.txt
 ```
 
 ---
 
-# 📌 Responsibilities of Each Class
+# ⚙ Workflow
 
-## Main.java
+```
+Application Start
 
-Responsible for:
+        │
 
-- Displaying Menu
-- Taking User Input
-- Calling Other Classes
-- Controlling Program Flow
+        ▼
 
----
+Main Menu
 
-## BankAccount.java
+        │
 
-Responsible for:
+ ┌──────┴────────┐
 
-- Creating Bank Account
-- Storing Account Information
-- Displaying Account Details
+ ▼               ▼
 
----
+Create         Login
 
-## Validation.java
+ │               │
 
-Responsible for:
+ ▼               ▼
 
-- Name Validation
-- Account Number Validation
-- PIN Validation
-- Balance Validation
+Validation   Authentication
 
-Returns:
+ │               │
 
-- true
-- false
+ ▼               ▼
 
----
+Save File    Dashboard
 
-## FileManager.java
+                 │
 
-Responsible for:
+      ┌──────────┼──────────┐
 
-- Saving Account
-- File Handling
-- BufferedWriter Operations
-- Append Mode Storage
+      ▼          ▼          ▼
 
-Returns:
+ Deposit    Withdraw   Check Balance
 
-- true → Save Successful
-- false → Save Failed
+      │          │          │
 
----
+      └──────┬───┴──────────┘
 
-# 📄 Current Database Format
+             ▼
 
-```text
-Name           : Ansh
-Account Number : 1000000000
-Balance        : 5000
+      Update CSV File
 
-Name           : Vansh
-Account Number : 1000000001
-Balance        : 5000
+             │
 
-Name           : Nitin
-Account Number : 1000000002
-Balance        : 5000
+             ▼
+
+          Logout
 ```
 
 ---
 
-# 🧠 Concepts Practiced
+# 📁 Database Format
+
+The project stores account data in **CSV format**.
+
+Example:
+
+```text
+1000000000,Ansh,1234,50000
+1000000001,Vansh,1111,6500
+1000000002,Nitin,2222,10000
+```
+
+```
+AccountNumber,Name,PIN,Balance
+```
+
+---
+
+# 📚 OOP Concepts Used
 
 - Classes & Objects
-- Methods
-- Object Communication
-- Validation
+- Constructors
+- Object Passing
+- Method Calling
+- Encapsulation (Basic)
+- Modular Programming
+- Separation of Concerns
+
+---
+
+# 📖 Java Concepts Used
+
+- Scanner
+- Switch Case
 - Loops
 - Conditional Statements
+- String Handling
 - File Handling
-- BufferedWriter
-- FileWriter
 - Exception Handling
-- Boolean Methods
-- Project Architecture
-- Relative File Paths
+- BufferedReader
+- BufferedWriter
+- Arrays
+- split()
+- parseInt()
+- parseLong()
 
 ---
 
-# 📈 Project Progress
+# 🚀 Documentation
 
-```text
-██████████████░░░░░░░░░░░░░░░░ 50%
+Detailed documentation is available inside the **docs/** folder.
 
-✅ Main Menu
-✅ Account Creation
-✅ Input Validation
-✅ File Handling
-✅ Permanent Storage
-
-⬜ Login
-⬜ Deposit
-⬜ Withdraw
-⬜ Check Balance
-⬜ Transaction History
-⬜ Close Account
-⬜ Mini Dashboard
-```
+| File | Description |
+|------|-------------|
+| planning.md | Project Planning & Roadmap |
+| flowchart.md | Complete Flowcharts |
+| notes.md | Development Notes & Learning |
 
 ---
 
-# 🚀 Upcoming Features
+# 💡 Future Improvements
 
-- Login System
-- Deposit Money
-- Withdraw Money
-- Check Balance
-- Transaction History
-- Account Search
 - Delete Account
-- Better File Structure
-- Java Swing Version (v2)
+- Change PIN
+- Transaction History
+- Money Transfer
+- Admin Panel
+- Java Swing GUI
+- MySQL Database
+- Password Encryption
+- JDBC Integration
 
 ---
 
-# 🎯 Learning Goals
+# 🎯 Learning Outcomes
 
-This project is helping me understand:
+This project helped me learn:
 
-- Real Software Architecture
-- OOP Design
-- Class Communication
+- Object-Oriented Programming
 - File Handling
-- Software Development Workflow
-- Git & GitHub Project Management
+- Authentication Logic
+- Modular Programming
+- CSV Data Management
+- Software Design
+- Project Documentation
+- Git & GitHub Workflow
 
 ---
 
-# 📅 Development Status
+# 👨‍💻 Author
 
-**Version :** v1.0
+## Ansh Rastogi
 
-**Status :**
-🟢 Active Development
+**GitHub:** https://github.com/code-ansh7
 
 ---
 
-# 👨‍💻 Developer
+# 📄 License
 
-**Ansh Rastogi**
+This project is licensed under the **MIT License**.
 
-B.Tech CSE Student
+See the [LICENSE](LICENSE) file for more details.
 
-Learning Java by building real-world projects.
+---
 
-> **"Programs teach syntax. Projects teach Software Engineering."**
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
