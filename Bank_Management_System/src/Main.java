@@ -115,7 +115,17 @@ public class Main {
                                 fm.updateBalance(currentUser);
                                 break;
                             case 2:
-                                System.out.println("Withdraw Coming Soon...");
+                                int withdrawAmount;
+                                while (true) { 
+                                    System.out.print("Enter Withdraw Amount: ");
+                                    withdrawAmount = sc.nextInt();
+                                    if(valid.checkAmount(withdrawAmount)){
+                                        break;
+                                    }
+                                }
+                                
+                                tm.withdrawMoney(currentUser, withdrawAmount);
+                                fm.updateBalance(currentUser);
                                 break;
                             case 3:
                                 System.out.println("Check Balance Coming Soon...");
