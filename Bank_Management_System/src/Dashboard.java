@@ -5,7 +5,7 @@ public class Dashboard {
         System.out.println("=====================================");
         System.out.println("Welcome, "+currentUser.name+"             ");
         System.out.println("=====================================\n");
-        System.out.println("1.Deposit Money.\n2.Withdraw Money.\n3.Check Balance.\n4.Logout.\n");
+        System.out.println("1.Deposit Money.\n2.Withdraw Money.\n3.Check Balance.\n4.Account Details.\n5.Logout.\n");
     }
 
     int dashboardChoice(Scanner sc){

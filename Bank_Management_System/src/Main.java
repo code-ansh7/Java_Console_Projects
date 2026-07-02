@@ -96,41 +96,44 @@ public class Main {
                 if (currentUser != null) {//agr null nhi hai mtlb user found.
                     Dashboard db = new Dashboard();
                     boolean isLoggedIn = true;
+                    TransactionManager tm = new TransactionManager();
                     while (isLoggedIn) {
                         db.showDashboard(currentUser);
                         int dashboardChoice = db.dashboardChoice(sc);
-                        TransactionManager tm = new TransactionManager();
                         switch (dashboardChoice) {
                             case 1:
                                 int depositAmount;
-                                while (true) { 
+                                while (true) {
                                     System.out.print("Enter Deposit Amount: ");
                                     depositAmount = sc.nextInt();
-                                    if(valid.checkAmount(depositAmount)){
+                                    if (valid.checkAmount(depositAmount)) {
                                         break;
                                     }
                                 }
-                            
+
                                 tm.depositMoney(currentUser, depositAmount);
                                 fm.updateBalance(currentUser);
                                 break;
                             case 2:
                                 int withdrawAmount;
-                                while (true) { 
+                                while (true) {
                                     System.out.print("Enter Withdraw Amount: ");
                                     withdrawAmount = sc.nextInt();
-                                    if(valid.checkAmount(withdrawAmount)){
+                                    if (valid.checkAmount(withdrawAmount)) {
                                         break;
                                     }
                                 }
-                                
+
                                 tm.withdrawMoney(currentUser, withdrawAmount);
                                 fm.updateBalance(currentUser);
                                 break;
                             case 3:
-                                System.out.println("Check Balance Coming Soon...");
+                                tm.checkBalance(currentUser);
                                 break;
                             case 4:
+                                tm.accountDetails(currentUser);
+                                break;
+                            case 5:
                                 System.out.println("Logout Successful...");
                                 isLoggedIn = false;
                                 break;
@@ -145,11 +148,11 @@ public class Main {
             }
             case 3:
                 System.out.println("Thank You For Using My Bank Management System.");
-                break;
+                sc.close();
+                return;
             default:
                 System.out.println("Invalid Choice.");
-
         }
-        sc.close();
+
     }
 }
