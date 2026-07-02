@@ -1,5 +1,5 @@
 public class Validation {
-     
+    
     boolean checkName(String name){//return true when name is valid.
         if(name.trim().isEmpty()){//Invalid Condition of Name.
             System.out.println("Please Enter a Valid Name!");
@@ -35,7 +35,13 @@ public class Validation {
             return false;
          }
         return true;
-        
-        // return true;
     }
+
+    boolean checkAmount(int amount){//return false when 
+        if(amount <= 0){//Invalid Condition of Bakance.
+            System.out.println("Amount Cannot Be '0' or Negative!");
+            return false;
+         }
+        return true;
+     }
 }

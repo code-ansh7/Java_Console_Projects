@@ -99,9 +99,20 @@ public class Main {
                     while (isLoggedIn) {
                         db.showDashboard(currentUser);
                         int dashboardChoice = db.dashboardChoice(sc);
+                        TransactionManager tm = new TransactionManager();
                         switch (dashboardChoice) {
                             case 1:
-                                System.out.println("Deposit Coming Soon...");
+                                int depositAmount;
+                                while (true) { 
+                                    System.out.print("Enter Deposit Amount: ");
+                                    depositAmount = sc.nextInt();
+                                    if(valid.checkAmount(depositAmount)){
+                                        break;
+                                    }
+                                }
+                            
+                                tm.depositMoney(currentUser, depositAmount);
+                                fm.updateBalance(currentUser);
                                 break;
                             case 2:
                                 System.out.println("Withdraw Coming Soon...");
