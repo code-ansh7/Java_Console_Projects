@@ -19,8 +19,7 @@ public class Main {
         int choice = sc.nextInt();
         sc.nextLine();
         switch(choice){
-            case 1: 
-                    ExpenseManager em = new ExpenseManager();
+            case 1: ExpenseManager em = new ExpenseManager();
                     em.addExpense();
                     break;
 
