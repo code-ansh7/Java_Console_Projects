@@ -8,8 +8,8 @@ public class Validation {
         return true;
     }
 
-    boolean checkReason(String reason){
-        if(reason.trim().isEmpty()){
+    boolean checkDescription(String description){
+        if(description.trim().isEmpty()){
             System.out.println("Reason Cannot Be Empty!");
             return false;
         }

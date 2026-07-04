@@ -1,5 +1,4 @@
-ExpenseId,Category,Reason,Amount,Date
-
-1, Food, Momos, 100, 04-07-2026
-1, Travel, Train, 200, 04-07-2026
-1, Study, Book, 80, 04-07-2026 
+Category, Reason, Amount, Date
+food, momos, 100, 4-7-26
+travel, train, 200, 4-7-26
+education, book, 80, 4-7-26

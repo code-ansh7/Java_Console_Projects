@@ -1,15 +1,13 @@
 public class Expense {
 
-    int expenseId;
     String category;
-    String reason;
+    String description;
     int amount;
     String date;
 
-    void createExpense(int expenseId,String category,String reason,int amount,String date){
-        this.expenseId = expenseId;
+    void createExpense(String category,String description,int amount,String date){
         this.category = category;
-        this.reason = reason;
+        this.description = description;
         this.amount = amount;
         this.date = date;
         System.out.println();
@@ -19,15 +17,14 @@ public class Expense {
 
     void displayExpense() {
 
-        System.out.println("Expense ID : " + expenseId);
         System.out.println("Category   : " + category);
-        System.out.println("Reason     : " + reason);
+        System.out.println("Description: " + description);
         System.out.println("Amount     : " + amount);
         System.out.println("Date       : " + date);
 
     }
 
-    
+
 }
 
    

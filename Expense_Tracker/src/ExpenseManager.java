@@ -18,11 +18,11 @@ public class ExpenseManager {
             }
         }
 
-        String reason;
+        String description;
         while (true) { 
-            System.out.print("Enter Reason: ");
-            reason = sc.nextLine();
-            if(valid.checkReason(reason)){
+            System.out.print("Enter Description: ");
+            description = sc.nextLine();
+            if(valid.checkDescription(description)){
                 break;
             }
         }
@@ -46,10 +46,11 @@ public class ExpenseManager {
             }      
         }
 
-        int expenseId = 1;
-        Expense exp = new Expense();
-        exp.createExpense(expenseId, category, reason, amount, date);
+
         FileManager fm = new FileManager();
+        Expense exp = new Expense();
+        exp.createExpense(category, description, amount, date);
+       
         if (fm.saveExpense(exp)) {
             exp.displayExpense();
             System.out.println("Expense Added Successfully...");
