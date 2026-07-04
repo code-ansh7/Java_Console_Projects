@@ -19,6 +19,8 @@ public class ExpenseManager {
         Expense exp = new Expense();
         exp.createExpense(expenseId, category, reason, amount, date);
         exp.displayExpense();
+        FileManager fm = new FileManager();
+        fm.saveExpense(exp);
     }
 
 }

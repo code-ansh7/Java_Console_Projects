@@ -6,18 +6,6 @@ public class Expense {
     int amount;
     String date;
 
-    Expense() {
-
-    }
-
-    Expense(int expenseId,String category,String reason,int amount,String date) {
-        this.expenseId = expenseId;
-        this.category = category;
-        this.reason = reason;
-        this.amount = amount;
-        this.date = date;
-    }
-
     void createExpense(int expenseId,String category,String reason,int amount,String date){
         this.expenseId = expenseId;
         this.category = category;
@@ -25,7 +13,7 @@ public class Expense {
         this.amount = amount;
         this.date = date;
         System.out.println();
-        System.out.println("Expense Created Successfull...");
+        System.out.println("Expense Created Successfully...");
 
     }
     void displayExpense() {
