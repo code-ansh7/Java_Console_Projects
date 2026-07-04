@@ -1,4 +1,5 @@
 public class Validation {
+
     boolean checkCategory(String category){
         if(category.trim().isEmpty()){
             System.out.println("Category Cannot Be Empty!");
@@ -30,5 +31,6 @@ public class Validation {
         }
         return true;
     }
+
 
 }

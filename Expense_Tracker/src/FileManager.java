@@ -1,4 +1,6 @@
 import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -20,5 +22,18 @@ public class FileManager {
         }
     }
 
+    void viewExpense(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("../database/expenses.csv"));
+            String line;
+            while((line = br.readLine()) != null){
+                System.out.println(line);
+            }
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
     
 }

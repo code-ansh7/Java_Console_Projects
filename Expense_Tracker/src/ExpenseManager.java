@@ -58,4 +58,8 @@ public class ExpenseManager {
         }
     }
 
+    void viewExpense(){
+        FileManager fm = new FileManager();
+        fm.viewExpense();
+    }
 }

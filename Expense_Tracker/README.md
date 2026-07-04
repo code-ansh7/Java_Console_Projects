@@ -1,7 +1,7 @@
 # Expense Tracker Progress
 
 ✅ Add Expense
-🟡 View Expense
+✅ View Expense
 🟡 Search Expense
 🟡 Delete Expense
 🟡 Total Expense

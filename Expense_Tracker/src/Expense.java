@@ -16,6 +16,7 @@ public class Expense {
         System.out.println("Expense Created Successfully...");
 
     }
+
     void displayExpense() {
 
         System.out.println("Expense ID : " + expenseId);
@@ -26,6 +27,7 @@ public class Expense {
 
     }
 
+    
 }
 
    

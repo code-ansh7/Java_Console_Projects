@@ -17,14 +17,17 @@ public class Main {
 
         System.out.print("Enter Your Choice: ");
         int choice = sc.nextInt();
+        System.out.println();
         sc.nextLine();
+
+        ExpenseManager em = new ExpenseManager();
         switch(choice){
-            case 1: ExpenseManager em = new ExpenseManager();
-                    em.addExpense();
+            case 1: em.addExpense();
                     break;
 
-            case 2: System.out.println("Coming Soon...");
-            break;
+            case 2: em.viewExpense();
+                    break;
+
             case 3: System.out.println("Coming Soon...");
             break;
             case 4: System.out.println("Coming Soon...");
