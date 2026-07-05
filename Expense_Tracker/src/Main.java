@@ -7,6 +7,7 @@ public class Main {
         System.out.println("          Expense Tracker          ");
         System.out.println("===================================");
         System.out.println();
+        
         System.out.println("1.Add Expense.");
         System.out.println("2.View Expense.");
         System.out.println("3.Search Expense by Description.");
