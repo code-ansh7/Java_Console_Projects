@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -7,7 +8,7 @@ public class Main {
         db.showDashboard();// Print Dashboard.
         int choice = db.dashboardChoice(); // Input Choice from the User.
         System.out.println();
-        sc.nextLine();// Buffer Cleanup.
+       
         ExpenseManager em = new ExpenseManager();
         switch(choice){
             case 1: em.addExpense();
@@ -18,7 +19,7 @@ public class Main {
 
             case 3: em.searchExpense();
                     break;
-            case 4: System.out.println("Coming Soon...");
+            case 4: em.deleteExpense();
                     break;
             case 5: System.out.println("Coming Soon...");
                     break;

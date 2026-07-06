@@ -72,4 +72,11 @@ public class ExpenseManager {
         FileManager fm = new FileManager();
         fm.searchExpense(description);
     }
+
+    void deleteExpense(){
+        System.out.print("Enter Description You want to delete: ");
+        String description = sc.nextLine();
+        FileManager fm = new FileManager();
+        fm.deleteExpense(description);
+    }
 }
