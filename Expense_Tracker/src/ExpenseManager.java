@@ -63,4 +63,8 @@ public class ExpenseManager {
         FileManager fm = new FileManager();
         fm.viewExpense();
     }
+ 
+    void searchExpense(){
+        
+    }
 }
