@@ -11,8 +11,10 @@ public class Main {
         System.out.println();
         System.out.print("1.Create Account.\n2.Login.\n3.Exit.");
         System.out.println();
+        
         System.out.print("\nEnter Your Choice : ");
         int choice = sc.nextInt();
+        
         sc.nextLine();
 
         switch (choice) {
