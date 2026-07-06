@@ -34,7 +34,37 @@ public class FileManager {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
+    void searchExpense(String description){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader("../database/expenses.csv"));
+            String line;
+            boolean found = false;
+            while((line = br.readLine()) != null){
+                if(line.startsWith("Category")){
+                    continue;
+                }
+                String data[] = line.split(", ");
+                if(data[1].trim().equalsIgnoreCase(description)){
+                    found = true;
+                    System.out.println();
+                    System.out.println("Expense Found...");
+                    System.out.println();
+                    System.out.println("Category    : " + data[0]);
+                    System.out.println("Description : " + data[1]);
+                    System.out.println("Amount      : " + data[2]);
+                    System.out.println("Date        : " + data[3]);
+                    System.out.println();
+                    break;
+                } 
+            }
+            if(!found){
+                System.out.println(description + " Not Found!");
+            }
+            br.close();
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+    }
 }

@@ -65,6 +65,11 @@ public class ExpenseManager {
     }
  
     void searchExpense(){
-        
+        System.out.println("========== Search Expense ==========");
+        System.out.println();
+        System.out.print("Enter Your Discription You want to search: ");
+        String description = sc.nextLine();
+        FileManager fm = new FileManager();
+        fm.searchExpense(description);
     }
 }

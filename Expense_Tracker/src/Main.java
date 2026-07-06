@@ -30,8 +30,8 @@ public class Main {
             case 2: em.viewExpense();
                     break;
 
-            case 3: System.out.println("Coming Soon...");
-            break;
+            case 3: em.searchExpense();
+                    break;
             case 4: System.out.println("Coming Soon...");
             break;
             case 5: System.out.println("Coming Soon...");
