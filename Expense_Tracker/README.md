@@ -395,6 +395,13 @@ After completing this project, I gained practical experience in:
 
 ---
 
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for more information.
+
+---
 # 👨‍💻 Developer
 
 <div align="center">
@@ -411,10 +418,4 @@ Building projects while mastering **Core Java**, **DSA**, and preparing for **Ap
 
 ---
 
-<div align="center">
-
-### ⭐ If you like this project, don't forget to Star the Repository!
-
-Made with ❤️ by **ANSH**
-
-</div>
+<div align
