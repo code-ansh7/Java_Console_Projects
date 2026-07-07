@@ -57,11 +57,12 @@ Java_Console_Projects
 │
 ├── Expense_Tracker
 │
+├── Quiz Application (Coming Soon)
+|
 ├── Student_Management_System (Coming Soon)
 │
 ├── Library_Management_System (Coming Soon)
 │
-├── Hospital_Management_System (Coming Soon)
 │
 └── README.md
 ```
@@ -237,9 +238,9 @@ Flutter App Development
 |---------|--------|
 | 🏦 Bank Management System | ✅ Completed |
 | 💸 Expense Tracker | ✅ Completed |
+| 📚  Quiz Application | 🚧 Planned |
 | 🎓 Student Management | 🚧 Planned |
 | 📚 Library Management | 🚧 Planned |
-| 🏥 Hospital Management | 🚧 Planned |
 
 ---
 
