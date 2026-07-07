@@ -1,8 +1,8 @@
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
-import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -71,7 +71,7 @@ public class FileManager {
 
     void deleteExpense(String description){
         try{
-            BufferedReader br = new BufferedReader(new FileReader("../database/expenses.csv"));
+            BufferedReader br = new BufferedReader(new      FileReader("../database/expenses.csv"));
             BufferedWriter bw = new BufferedWriter(new FileWriter("../database/temp.csv"));
 
             String line;
@@ -93,6 +93,7 @@ public class FileManager {
                     bw.newLine();
                 }
             }
+
             br.close();
             bw.close();
             File oldFile = new File("../database/expenses.csv");
@@ -110,6 +111,30 @@ public class FileManager {
             }
 
         } catch (IOException e){
+            e.printStackTrace();
+        } 
+    }
+
+    void totalExpense(){
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("../database/expenses.csv"));
+
+            String line;
+            int total = 0;
+
+            while((line = br.readLine()) != null){
+                if(line.startsWith("Category")){//header skip.
+                    continue;
+                }
+                String data[] = line.split(", ");
+                int amount = Integer.parseInt(data[2]);//to convert amount String to integer.
+                total += amount;
+            }
+            System.out.println("Total Expense : " + total);
+            System.out.println();
+            br.close();
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

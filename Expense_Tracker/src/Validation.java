@@ -10,7 +10,7 @@ public class Validation {
 
     boolean checkDescription(String description){
         if(description.trim().isEmpty()){
-            System.out.println("Reason Cannot Be Empty!");
+            System.out.println("Description Cannot Be Empty!");
             return false;
         }
         return true;

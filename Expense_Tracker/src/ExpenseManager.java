@@ -79,4 +79,9 @@ public class ExpenseManager {
         FileManager fm = new FileManager();
         fm.deleteExpense(description);
     }
+
+    void totalExpense(){
+        FileManager fm = new FileManager();
+        fm.totalExpense();
+    }
 }
