@@ -57,7 +57,6 @@ Java_Console_Projects
 │
 ├── Expense_Tracker
 │
-│
 ├── Quiz Application (Coming Soon)
 |
 ├── Student_Management_System (Coming Soon)
