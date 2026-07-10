@@ -7,14 +7,15 @@ public class QuizApplication {
         while(isRunning){
 
             db.showDashboard();
-
-            switch(db.dashboardChoice()){
+            try {
+                int dbChoice = db.dashboardChoice();
+                switch(dbChoice){
                 case 1: System.out.println();
                         QuizManager qm = new QuizManager();
                         qm.startQuiz();
                         break;
                 case 2: System.out.println();
-                        System.out.println("RUles, Comming Soon!\n");
+                        db.viewRules();
                         break;
                 case 3: System.out.println();
                         System.out.println("Thankyou for Using My Application.\n");
@@ -24,6 +25,9 @@ public class QuizApplication {
                         System.out.println("Invalid Choice!\n");
 
             }
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            } 
         }
     }
 }

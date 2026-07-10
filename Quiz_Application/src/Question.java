@@ -18,7 +18,7 @@ public class Question {
     }
 
     void displayQuestion(){
-        System.out.println("=============== Question ===============");
+        System.out.println("========================================");
         System.out.println();
         System.out.println(question);
         System.out.println();
