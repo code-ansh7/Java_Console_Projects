@@ -10,7 +10,8 @@ public class QuizApplication {
 
             switch(db.dashboardChoice()){
                 case 1: System.out.println();
-                        System.out.println("Comming Soon!\n");
+                        QuizManager qm = new QuizManager();
+                        qm.startQuiz();
                         break;
                 case 2: System.out.println();
                         System.out.println("RUles, Comming Soon!\n");

@@ -1,0 +1,16 @@
+Question, OptionA, OptionB, OptionC, OptionD, CorrectAnswer
+What is JVM?, Java Virtual Machine, Java Variable Method, Java Version Manager, Java Visual Machine, A
+Which keyword is used to create an object?, class, object, new, this, C
+Which method is the entry point of a Java program?, start(), init(), main(), run(), C
+Which keyword is used for inheritance?, extends, implements, inherit, super, A
+Which loop executes at least once?, for, while, do-while, foreach, C
+Which package contains Scanner class?, java.io, java.util, java.lang, java.net, B
+Which symbol is used to access object members?, ., ->, ::, #, A
+Which keyword refers to the current object?, this, super, self, current, A
+Which collection stores dynamic elements?, Array, ArrayList, String, Scanner, B
+Which exception occurs when a file is not found?, IOException, ArithmeticException, FileNotFoundException, NullPointerException, C
+What is the default value of int instance variable?, 0, 1, null, undefined, A
+Which keyword is used to stop a loop?, continue, break, return, exit, B
+Which operator compares two values?, =, ==, !=, ===, B
+Which class is used to read a text file line by line?, Scanner, File, BufferedReader, FileWriter, C
+Which method adds an element to an ArrayList?, insert(), push(), add(), append(), C
